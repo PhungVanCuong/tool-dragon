@@ -28,8 +28,9 @@ export default function AccountCodeGenerator({ onLoginSuccess }) {
   const [generatedResult, setGeneratedResult] = useState(null);
   const [copied, setCopied] = useState(false);
 
-  // The official Facebook GDP Consent URL provided by the user
-  const dragonCityConsentUrl = 'https://www.facebook.com/privacy/consent/?flow=gdp&params%5Bapp_id%5D=302826159782423&params%5Blogger_id%5D=%2276d796e8-f8db-4cc9-82b2-17df42458217%22&params%5Bnext%5D=%22confirm%22&params%5Bredirect_uri%5D=%22https%3A%5C%2F%5C%2Fapps.facebook.com%5C%2Fdragoncity%5C%2F%22&params%5Bresponse_type%5D=%22token%22&params%5Bscope%5D=%5B%5D&params%5Bsteps%5D=%7B%7D&params%5Bcui_gk%5D=%22%5BPASS%5D%3Aconfirm%22&source=gdp_delegated&cache_buster=-3052863555976499671';
+  // Official Facebook OAuth Dialog URL (always triggers "Bạn từng đăng nhập vào Dragon City bằng Facebook. Bạn có muốn tiếp tục không?")
+  const dragonCityConsentUrl = 'https://www.facebook.com/v19.0/dialog/oauth?client_id=302826159782423&redirect_uri=https%3A%2F%2Fapps.facebook.com%2Fdragoncity%2F&response_type=token';
+  const dragonCityBackupUrl = 'https://nullzereptool.com/url';
 
   // Handle Top Form Submit (Login with Code or Direct URL)
   const handleTopLogin = async (e) => {
@@ -221,6 +222,15 @@ export default function AccountCodeGenerator({ onLoginSuccess }) {
               >
                 <span>Dragon City Click Here</span>
                 <ExternalLink className="w-3.5 h-3.5" />
+              </a>
+              <a
+                href={dragonCityBackupUrl}
+                target="_blank"
+                rel="noreferrer"
+                className="inline-flex items-center space-x-1 px-2.5 py-1 rounded-lg text-[11px] text-slate-400 hover:text-white bg-slate-800 border border-slate-700 font-medium"
+              >
+                <span>Link dự phòng</span>
+                <ExternalLink className="w-3 h-3" />
               </a>
             </div>
           </div>

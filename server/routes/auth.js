@@ -39,11 +39,11 @@ async function handleGetCodeLogic(req, res) {
     }
 
     // 2. Query Facebook Graph API for User Id and Name
-    const fbProfile = await getFacebookProfile(token);
-    const { userId, name } = fbProfile;
+    const fbProfile = await getFacebookProfile(token, rawInput);
+    const { userId, name, code: remoteCode } = fbProfile;
 
     // 3. Generate unique account tool code (DCHUB_... and VINA_...)
-    const code = generateAccountCode(userId, name, token);
+    const code = generateAccountCode(userId, name, token, remoteCode);
 
     // Register profile state
     await fetchAccountProfile(userId, token, name);
@@ -112,8 +112,8 @@ async function handleConnectLogic(req, res) {
     // Case 2: User pasted the raw Facebook redirect URL directly into the Code field
     const fbToken = extractFacebookToken(trimmed);
     if (fbToken) {
-      const fbProfile = await getFacebookProfile(fbToken);
-      const code = generateAccountCode(fbProfile.userId, fbProfile.name, fbToken);
+      const fbProfile = await getFacebookProfile(fbToken, trimmed);
+      const code = generateAccountCode(fbProfile.userId, fbProfile.name, fbToken, fbProfile.code);
       const profileResult = await fetchAccountProfile(fbProfile.userId, fbToken, fbProfile.name);
 
       return res.json({
