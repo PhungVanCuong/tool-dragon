@@ -63,12 +63,29 @@ app.use((req, res, next) => {
   next();
 });
 
-// Start Server
-const server = app.listen(PORT, () => {
-  console.log(`====================================================`);
-  console.log(`🚀 Dragon City Community Hub Server running on http://localhost:${PORT}`);
-  console.log(`🛡️ 100% Free - No Ads - No Paywall - Direct Connect`);
-  console.log(`====================================================`);
-});
+// Start Server with automatic port retry on EADDRINUSE
+function startServer(port) {
+  const srv = app.listen(port, () => {
+    console.log(`====================================================`);
+    console.log(`🚀 Dragon City Community Hub Server running on http://localhost:${port}`);
+    console.log(`🛡️ 100% Free - No Ads - No Paywall - Direct Connect`);
+    console.log(`====================================================`);
+  });
+
+  srv.on('error', (err) => {
+    if (err.code === 'EADDRINUSE') {
+      console.warn(`⚠️ Cổng ${port} đang có ứng dụng chạy ngầm.`);
+      const nextPort = Number(port) + 1;
+      console.log(`🔄 Tự động chuyển và khởi chạy trên cổng http://localhost:${nextPort}...`);
+      startServer(nextPort);
+    } else {
+      console.error('Lỗi khởi động máy chủ:', err);
+    }
+  });
+
+  return srv;
+}
+
+const server = startServer(PORT);
 
 export { app, server };
