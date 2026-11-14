@@ -1,0 +1,26 @@
+{
+  "sanctuaryLevels": [
+    { "level": 1, "unlocks": ["Deep Forest Dragon", "Burning Dragon"], "goldCost": 250000 },
+    { "level": 2, "unlocks": ["Steam Dragon", "Lava Dragon", "Dujour Dragon"], "goldCost": 500000 },
+    { "level": 3, "unlocks": ["Apocalypse Dragon", "Abyss Dragon", "Glitter Dragon"], "goldCost": 1500000 },
+    { "level": 4, "unlocks": ["Promethium Dragon", "Supersonic Dragon"], "goldCost": 3000000 },
+    { "level": 5, "unlocks": ["Sylvan Dragon", "Dark Stone Dragon"], "goldCost": 6000000 },
+    { "level": 6, "unlocks": ["Mirage Dragon", "Core Dragon"], "goldCost": 12000000 },
+    { "level": 7, "unlocks": ["Millennium Dragon", "Howl Dragon"], "goldCost": 20000000 },
+    { "level": 8, "unlocks": ["Forge Dragon", "Glacial Dragon"], "goldCost": 30000000 }
+  ],
+  "foodLevels": [
+    { "level": 1, "foodPerFeed": 5, "totalFeed": 20, "cumulativeFood": 0 },
+    { "level": 5, "foodPerFeed": 40, "totalFeed": 160, "cumulativeFood": 280 },
+    { "level": 10, "foodPerFeed": 320, "totalFeed": 1280, "cumulativeFood": 3480 },
+    { "level": 15, "foodPerFeed": 2560, "totalFeed": 10240, "cumulativeFood": 29080 },
+    { "level": 20, "foodPerFeed": 10240, "totalFeed": 40960, "cumulativeFood": 131480 },
+    { "level": 25, "foodPerFeed": 32768, "totalFeed": 131072, "cumulativeFood": 465812 },
+    { "level": 30, "foodPerFeed": 98304, "totalFeed": 393216, "cumulativeFood": 1533844 },
+    { "level": 35, "foodPerFeed": 262144, "totalFeed": 1048576, "cumulativeFood": 4443028 },
+    { "level": 40, "foodPerFeed": 655360, "totalFeed": 2621440, "cumulativeFood": 11504532 },
+    { "level": 50, "foodPerFeed": 2621440, "totalFeed": 10485760, "cumulativeFood": 54247316 },
+    { "level": 60, "foodPerFeed": 6291456, "totalFeed": 25165824, "cumulativeFood": 178530260 },
+    { "level": 70, "foodPerFeed": 12582912, "totalFeed": 50331648, "cumulativeFood": 476837140 }
+  ]
+}

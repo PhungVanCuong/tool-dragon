@@ -1,0 +1,200 @@
+{
+  "raceName": "High Master Karma Marathon",
+  "totalLaps": 25,
+  "heroicRewardLap": 15,
+  "laps": [
+    {
+      "lap": 1,
+      "nodes": [
+        {
+          "node": 1,
+          "tasks": [
+            { "type": "COLLECT_GOLD", "name": "Thu hoạch Vàng", "required": 3, "pool": 3, "waitMinutes": 0, "tip": "Thu hoạch các môi trường sống có vàng nhanh." }
+          ]
+        },
+        {
+          "node": 2,
+          "tasks": [
+            { "type": "HARVEST_FOOD", "name": "Thu hoạch Thức ăn", "required": 3, "pool": 3, "waitMinutes": 0, "tip": "Trồng Bluebell gai 30 giây để hoàn thành ngay." }
+          ]
+        },
+        {
+          "node": 3,
+          "tasks": [
+            { "type": "BREED_DRAGONS", "name": "Lai tạo Rồng", "required": 1, "pool": 1, "waitMinutes": 0, "tip": "Lai Terra + Terra (15 giây) để nhận vật phẩm tức thì." }
+          ]
+        },
+        {
+          "node": 4,
+          "tasks": [
+            { "type": "HATCH_EGGS", "name": "Ấp trứng Rồng", "required": 1, "pool": 1, "waitMinutes": 0, "tip": "Mua và ấp trứng Terra Dragon trong Shop (15 giây)." }
+          ]
+        },
+        {
+          "node": 5,
+          "tasks": [
+            { "type": "FEED_DRAGONS", "name": "Cho Rồng ăn", "required": 4, "pool": 4, "waitMinutes": 0, "tip": "Cho rồng cấp thấp ăn 4 lần để tiết kiệm thức ăn." }
+          ]
+        }
+      ]
+    },
+    {
+      "lap": 2,
+      "nodes": [
+        {
+          "node": 1,
+          "tasks": [
+            { "type": "COLLECT_GOLD", "name": "Thu hoạch Vàng", "required": 6, "pool": 6, "waitMinutes": 0, "tip": "Thu hoạch khắp các đảo." },
+            { "type": "HARVEST_FOOD", "name": "Thu hoạch Thức ăn", "required": 4, "pool": 4, "waitMinutes": 0, "tip": "Trồng cây 30 giây." }
+          ]
+        },
+        {
+          "node": 2,
+          "tasks": [
+            { "type": "BREED_DRAGONS", "name": "Lai tạo Rồng", "required": 2, "pool": 2, "waitMinutes": 0, "tip": "Terra + Terra x2 lần." },
+            { "type": "FEED_DRAGONS", "name": "Cho Rồng ăn", "required": 6, "pool": 6, "waitMinutes": 0, "tip": "Cho rồng lv 1 ăn lên lv 4." }
+          ]
+        },
+        {
+          "node": 3,
+          "tasks": [
+            { "type": "HATCH_EGGS", "name": "Ấp trứng Rồng", "required": 2, "pool": 2, "waitMinutes": 0, "tip": "Ấp trứng Terra." },
+            { "type": "COLLECT_GOLD", "name": "Thu hoạch Vàng", "required": 8, "pool": 8, "waitMinutes": 0, "tip": "Thu hoạch vàng." }
+          ]
+        },
+        {
+          "node": 4,
+          "tasks": [
+            { "type": "BATTLE_DRAGONS", "name": "Chiến đấu Đảo Đua", "required": 2, "pool": 1, "waitMinutes": 60, "tip": "Đánh trận 1 ngay, trận 2 cần đợi hồi chiêu 60 phút." }
+          ]
+        },
+        {
+          "node": 5,
+          "tasks": [
+            { "type": "LEAGUE_BATTLES", "name": "Thắng trận League", "required": 2, "pool": 2, "waitMinutes": 0, "tip": "Đánh giải đấu PvP nếu còn lượt." },
+            { "type": "HARVEST_FOOD", "name": "Thu hoạch Thức ăn", "required": 6, "pool": 6, "waitMinutes": 0, "tip": "Trồng nông trại cây ngắn ngày." }
+          ]
+        }
+      ]
+    },
+    {
+      "lap": 3,
+      "nodes": [
+        {
+          "node": 1,
+          "tasks": [
+            { "type": "COLLECT_GOLD", "name": "Thu hoạch Vàng", "required": 10, "pool": 10, "waitMinutes": 0, "tip": "Thu hoạch toàn bộ vàng môi trường sống." },
+            { "type": "BREED_DRAGONS", "name": "Lai tạo Rồng", "required": 3, "pool": 3, "waitMinutes": 0, "tip": "Lai Terra + Terra." }
+          ]
+        },
+        {
+          "node": 2,
+          "tasks": [
+            { "type": "HATCH_EGGS", "name": "Ấp trứng Rồng", "required": 3, "pool": 3, "waitMinutes": 0, "tip": "Ấp trứng Terra." },
+            { "type": "FEED_DRAGONS", "name": "Cho Rồng ăn", "required": 8, "pool": 8, "waitMinutes": 0, "tip": "Cho rồng ăn mức thấp." }
+          ]
+        },
+        {
+          "node": 3,
+          "tasks": [
+            { "type": "BATTLE_DRAGONS", "name": "Chiến đấu Đảo Đua", "required": 3, "pool": 1, "waitMinutes": 80, "tip": "Trận 1 ngay, 2 trận sau mỗi trận hồi chiêu 1h20m." }
+          ]
+        },
+        {
+          "node": 4,
+          "tasks": [
+            { "type": "HARVEST_FOOD", "name": "Thu hoạch Thức ăn", "required": 8, "pool": 8, "waitMinutes": 0, "tip": "Trồng cây 30s." },
+            { "type": "LEAGUE_BATTLES", "name": "Thắng trận League", "required": 3, "pool": 3, "waitMinutes": 0, "tip": "Thắng 3 trận League." }
+          ]
+        },
+        {
+          "node": 5,
+          "tasks": [
+            { "type": "BREED_DRAGONS", "name": "Lai tạo Rồng", "required": 4, "pool": 3, "waitMinutes": 90, "tip": "3 con đầu ăn ngay, con thứ 4 hồi sau 90 phút." },
+            { "type": "HATCH_EGGS", "name": "Ấp trứng Rồng", "required": 4, "pool": 3, "waitMinutes": 90, "tip": "3 trứng đầu nhận ngay, trứng thứ 4 hồi sau 90 phút." }
+          ]
+        }
+      ]
+    },
+    {
+      "lap": 4,
+      "nodes": [
+        {
+          "node": 1,
+          "tasks": [
+            { "type": "COLLECT_GOLD", "name": "Thu hoạch Vàng", "required": 14, "pool": 11, "waitMinutes": 120, "tip": "Thu hoạch pool 11/14, chờ 2 tiếng thu hoạch nốt." }
+          ]
+        },
+        {
+          "node": 2,
+          "tasks": [
+            { "type": "HARVEST_FOOD", "name": "Thu hoạch Thức ăn", "required": 12, "pool": 9, "waitMinutes": 100, "tip": "Trồng trọt pool 9, chờ hồi chiêu 100 phút." }
+          ]
+        },
+        {
+          "node": 3,
+          "tasks": [
+            { "type": "BATTLE_DRAGONS", "name": "Chiến đấu Đảo Đua", "required": 4, "pool": 1, "waitMinutes": 80, "tip": "Tổng thời gian chiến đấu dự kiến 4 tiếng." }
+          ]
+        },
+        {
+          "node": 4,
+          "tasks": [
+            { "type": "BREED_DRAGONS", "name": "Lai tạo Rồng", "required": 5, "pool": 4, "waitMinutes": 90, "tip": "Lai Terra + Terra liên tục." }
+          ]
+        },
+        {
+          "node": 5,
+          "tasks": [
+            { "type": "LEAGUE_BATTLES", "name": "Thắng trận League", "required": 4, "pool": 3, "waitMinutes": 180, "tip": "Đánh 3 trận đầu ngay, trận 4 đợi hồi lượt League." },
+            { "type": "FEED_DRAGONS", "name": "Cho Rồng ăn", "required": 12, "pool": 12, "waitMinutes": 0, "tip": "Cho ăn rồng cấp thấp." }
+          ]
+        }
+      ]
+    },
+    {
+      "lap": 5,
+      "nodes": [
+        {
+          "node": 1,
+          "tasks": [
+            { "type": "HARVEST_FOOD", "name": "Thu hoạch Thức ăn", "required": 16, "pool": 12, "waitMinutes": 150, "tip": "Nhận 12/16 ngay, 4 còn lại đợi 2h30p." }
+          ]
+        },
+        {
+          "node": 2,
+          "tasks": [
+            { "type": "BREED_DRAGONS", "name": "Lai tạo Rồng", "required": 6, "pool": 4, "waitMinutes": 120, "tip": "Terra + Terra." },
+            { "type": "HATCH_EGGS", "name": "Ấp trứng Rồng", "required": 6, "pool": 4, "waitMinutes": 120, "tip": "Ấp trứng Terra trong Shop." }
+          ]
+        },
+        {
+          "node": 3,
+          "tasks": [
+            { "type": "BATTLE_DRAGONS", "name": "Chiến đấu Đảo Đua", "required": 5, "pool": 1, "waitMinutes": 80, "tip": "Trận đấu cách nhau 1h20m." }
+          ]
+        },
+        {
+          "node": 4,
+          "tasks": [
+            { "type": "COLLECT_GOLD", "name": "Thu hoạch Vàng", "required": 20, "pool": 16, "waitMinutes": 180, "tip": "Pool 16/20, còn lại 3 giờ." }
+          ]
+        },
+        {
+          "node": 5,
+          "tasks": [
+            { "type": "FEED_DRAGONS", "name": "Cho Rồng ăn", "required": 18, "pool": 18, "waitMinutes": 0, "tip": "Cho ăn hoàn tất ngay lập tức." },
+            { "type": "LEAGUE_BATTLES", "name": "Thắng trận League", "required": 5, "pool": 3, "waitMinutes": 240, "tip": "Giữ vé League trước khi vào node này!" }
+          ]
+        }
+      ]
+    }
+  ],
+  "tipsAndTricks": [
+    "Luôn dùng Terra Dragon + Terra Dragon (15 giây) để làm nhiệm vụ Lai và Ấp trứng nhanh gấp 100 lần.",
+    "Chọn loại hạt giống rẻ nhất (Bluebell 30 giây) để spam thu hoạch thức ăn không tốn chi phí.",
+    "Mua trứng Terra trong Shop giá 100 vàng và ấp ngay tại lò ấp.",
+    "Kiểm tra Pool trước khi làm: nếu Pool đã hết, hãy đợi hết thời gian Cooldown trước khi tiếp tục thực hiện hành động.",
+    "Tiết kiệm vé League trước khi đến các chặng yêu cầu League Battles để tránh bị nghẽn 6 tiếng."
+  ]
+}

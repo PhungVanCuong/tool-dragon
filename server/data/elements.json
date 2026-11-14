@@ -1,0 +1,204 @@
+{
+  "elements": [
+    {
+      "id": "terra",
+      "name": "Terra",
+      "nameVi": "Đất",
+      "color": "#8d5b28",
+      "icon": "⛰️",
+      "strongAgainst": ["flame", "electric"],
+      "weakTo": ["metal", "war"],
+      "immuneTo": ["electric"]
+    },
+    {
+      "id": "flame",
+      "name": "Flame",
+      "nameVi": "Lửa",
+      "color": "#e24c00",
+      "icon": "🔥",
+      "strongAgainst": ["nature", "ice"],
+      "weakTo": ["sea", "terra"],
+      "immuneTo": []
+    },
+    {
+      "id": "sea",
+      "name": "Sea",
+      "nameVi": "Nước",
+      "color": "#0099e6",
+      "icon": "💧",
+      "strongAgainst": ["flame", "war"],
+      "weakTo": ["flame", "nature"],
+      "immuneTo": []
+    },
+    {
+      "id": "nature",
+      "name": "Nature",
+      "nameVi": "Cây",
+      "color": "#4caf50",
+      "icon": "🌿",
+      "strongAgainst": ["sea", "light"],
+      "weakTo": ["ice", "flame"],
+      "immuneTo": []
+    },
+    {
+      "id": "electric",
+      "name": "Electric",
+      "nameVi": "Sấm sét",
+      "color": "#ffcc00",
+      "icon": "⚡",
+      "strongAgainst": ["sea", "metal"],
+      "weakTo": ["terra", "light"],
+      "immuneTo": []
+    },
+    {
+      "id": "ice",
+      "name": "Ice",
+      "nameVi": "Băng",
+      "color": "#00bcd4",
+      "icon": "❄️",
+      "strongAgainst": ["nature", "war"],
+      "weakTo": ["flame", "metal"],
+      "immuneTo": []
+    },
+    {
+      "id": "metal",
+      "name": "Metal",
+      "nameVi": "Kim loại",
+      "color": "#9e9e9e",
+      "icon": "⚔️",
+      "strongAgainst": ["terra", "ice"],
+      "weakTo": ["electric", "dark"],
+      "immuneTo": []
+    },
+    {
+      "id": "dark",
+      "name": "Dark",
+      "nameVi": "Bóng tối",
+      "color": "#5c2d91",
+      "icon": "🌑",
+      "strongAgainst": ["metal", "light"],
+      "weakTo": ["terra", "pure"],
+      "immuneTo": []
+    },
+    {
+      "id": "light",
+      "name": "Light",
+      "nameVi": "Ánh sáng",
+      "color": "#ffe082",
+      "icon": "☀️",
+      "strongAgainst": ["electric", "dark"],
+      "weakTo": ["nature", "dark"],
+      "immuneTo": []
+    },
+    {
+      "id": "war",
+      "name": "War",
+      "nameVi": "Chiến binh",
+      "color": "#b71c1c",
+      "icon": "🛡️",
+      "strongAgainst": ["terra", "ice"],
+      "weakTo": ["sea", "ice"],
+      "immuneTo": []
+    },
+    {
+      "id": "pure",
+      "name": "Pure",
+      "nameVi": "Thuần khiết",
+      "color": "#ec407a",
+      "icon": "💎",
+      "strongAgainst": ["legend", "wind"],
+      "weakTo": ["primal"],
+      "immuneTo": []
+    },
+    {
+      "id": "legend",
+      "name": "Legend",
+      "nameVi": "Huyền thoại",
+      "color": "#ab47bc",
+      "icon": "👑",
+      "strongAgainst": ["primal"],
+      "weakTo": ["pure"],
+      "immuneTo": []
+    },
+    {
+      "id": "primal",
+      "name": "Primal",
+      "nameVi": "Nguyên thủy",
+      "color": "#6d4c41",
+      "icon": "🦖",
+      "strongAgainst": ["pure"],
+      "weakTo": ["legend"],
+      "immuneTo": []
+    },
+    {
+      "id": "wind",
+      "name": "Wind",
+      "nameVi": "Gió",
+      "color": "#26c6da",
+      "icon": "🌪️",
+      "strongAgainst": ["wind"],
+      "weakTo": ["pure"],
+      "immuneTo": []
+    },
+    {
+      "id": "beauty",
+      "name": "Beauty",
+      "nameVi": "Sắc đẹp",
+      "color": "#f06292",
+      "icon": "🌸",
+      "strongAgainst": ["magic", "chaos"],
+      "weakTo": ["happy"],
+      "immuneTo": []
+    },
+    {
+      "id": "magic",
+      "name": "Magic",
+      "nameVi": "Ma thuật",
+      "color": "#7e57c2",
+      "icon": "✨",
+      "strongAgainst": ["chaos", "soul"],
+      "weakTo": ["beauty"],
+      "immuneTo": []
+    },
+    {
+      "id": "chaos",
+      "name": "Chaos",
+      "nameVi": "Hỗn mang",
+      "color": "#e53935",
+      "icon": "🌀",
+      "strongAgainst": ["soul", "dream"],
+      "weakTo": ["magic"],
+      "immuneTo": []
+    },
+    {
+      "id": "happy",
+      "name": "Happy",
+      "nameVi": "Hạnh phúc",
+      "color": "#ffb300",
+      "icon": "😄",
+      "strongAgainst": ["beauty", "dream"],
+      "weakTo": ["chaos"],
+      "immuneTo": []
+    },
+    {
+      "id": "dream",
+      "name": "Dream",
+      "nameVi": "Giấc mơ",
+      "color": "#42a5f5",
+      "icon": "🌙",
+      "strongAgainst": ["soul", "happy"],
+      "weakTo": ["chaos"],
+      "immuneTo": []
+    },
+    {
+      "id": "soul",
+      "name": "Soul",
+      "nameVi": "Linh hồn",
+      "color": "#26a69a",
+      "icon": "👻",
+      "strongAgainst": ["beauty", "magic"],
+      "weakTo": ["dream"],
+      "immuneTo": []
+    }
+  ]
+}
