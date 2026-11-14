@@ -17,10 +17,13 @@ import {
   Shield,
   ArrowRight,
   CheckCircle,
-  AlertCircle
+  AlertCircle,
+  Play,
+  MapPin,
+  RefreshCw
 } from 'lucide-react';
 
-export default function Dashboard({ setActiveTab, onOpenConnectModal }) {
+export default function Dashboard({ setActiveTab, onOpenConnectModal, onOpenLauncherModal }) {
   const { isConnected, isDemo, profile, updateProfileLocally } = useAuth();
   const [actionLoading, setActionLoading] = useState(null);
   const [notification, setNotification] = useState(null);
@@ -211,6 +214,14 @@ export default function Dashboard({ setActiveTab, onOpenConnectModal }) {
           </div>
 
           <div className="flex items-center space-x-2">
+            <button
+              onClick={onOpenLauncherModal}
+              className="px-4 py-2 bg-gradient-to-r from-amber-500 hover:from-amber-400 to-orange-500 hover:to-orange-400 text-slate-950 font-extrabold rounded-xl text-xs uppercase tracking-wider shadow-md shadow-orange-500/20 flex items-center space-x-1.5 transition-all"
+            >
+              <Play className="w-4 h-4 fill-current" />
+              <span>Open Dragon City</span>
+            </button>
+
             {!isConnected ? (
               <button
                 onClick={onOpenConnectModal}

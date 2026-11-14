@@ -1,4 +1,5 @@
 import express from 'express';
+import { dbService } from '../services/dbService.js';
 import {
   harvestGreenhouse,
   boostGreenhouse,
@@ -34,6 +35,15 @@ router.post('/greenhouse/harvest', async (req, res) => {
   try {
     const { userId, sessionId } = getCredentials(req);
     const result = await harvestGreenhouse(userId, sessionId);
+    if (result.success && userId) {
+      dbService.addActivityLog({
+        userId,
+        category: 'RESOURCE',
+        action: 'GREENHOUSE_HARVEST',
+        status: 'SUCCESS',
+        message: `Thu hoạch nhà kính thành công: +${result.foodAdded?.toLocaleString()} thức ăn`
+      });
+    }
     return res.json(result);
   } catch (err) {
     return res.status(500).json({ success: false, error: err.message });
@@ -61,6 +71,15 @@ router.post('/island/clear-obstacles', async (req, res) => {
     const { userId, sessionId } = getCredentials(req);
     const { islandId } = req.body;
     const result = await clearObstacles(userId, sessionId, islandId || 1);
+    if (result.success && userId) {
+      dbService.addActivityLog({
+        userId,
+        category: 'ISLAND',
+        action: 'CLEAR_OBSTACLE',
+        status: 'SUCCESS',
+        message: `Dọn sạch chướng ngại vật đảo #${islandId || 1}: tiêu tốn ${result.goldSpent?.toLocaleString()} vàng`
+      });
+    }
     return res.json(result);
   } catch (err) {
     return res.status(500).json({ success: false, error: err.message });

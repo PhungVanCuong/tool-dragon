@@ -45,6 +45,17 @@ router.get('/dragons', (req, res) => {
 });
 
 /**
+ * GET /api/database/dragons/:id
+ */
+router.get('/dragons/:id', (req, res) => {
+  const dragon = dragonsData.dragons.find(d => d.id === req.params.id);
+  if (!dragon) {
+    return res.status(404).json({ success: false, error: 'Không tìm thấy rồng này' });
+  }
+  return res.json({ success: true, dragon });
+});
+
+/**
  * GET /api/database/elements
  */
 router.get('/elements', (req, res) => {

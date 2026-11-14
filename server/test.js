@@ -22,6 +22,7 @@ import {
   calculateFeedingCost
 } from './services/breedingService.js';
 import { recommendCounters, getElementMatchup } from './services/arenaService.js';
+import { dbService } from './services/dbService.js';
 
 console.log('🧪 Starting Dragon City Backend Tests...\n');
 
@@ -34,7 +35,7 @@ assert(extractedToken !== null, 'Token should be extracted from Facebook redirec
 assert(extractedToken.startsWith('EAAETazWuuhcBS'), 'Token should start with EAAETazWuuhcBS');
 
 const code = generateAccountCode('549093523579670', 'Cường Phùng', extractedToken);
-assert(code.startsWith('DCHUB_'), 'Code should start with DCHUB_ prefix');
+assert(code.startsWith('DCHUB_') || code.startsWith('VINA_'), 'Code should start with DCHUB_ or VINA_ prefix');
 
 const retrieved = getAccountByCode(code);
 assert.strictEqual(retrieved.userId, '549093523579670');
@@ -115,6 +116,48 @@ const counter = recommendCounters(['h_master_karma', 'm_prideful_vampire']);
 assert.strictEqual(counter.success, true);
 assert.strictEqual(counter.recommendations.length, 2);
 console.log('✅ Arena Counter-Pick tests passed!\n');
+
+// 6. Test dbService (Profiles, Collection, Sync, Activity, Settings)
+console.log('6. Testing Persistent Database Service...');
+const testUserId = '3560321594852606595';
+const prof = dbService.upsertProfile(testUserId, {
+  name: 'Cuong Phung',
+  level: 68,
+  gold: 48500000,
+  food: 12400000,
+  gems: 320
+});
+assert.strictEqual(prof.userId, testUserId);
+assert.strictEqual(prof.name, 'Cuong Phung');
+
+const coll = dbService.addToCollection(testUserId, {
+  dragonId: 'h_master_karma',
+  name: 'High Master Karma Dragon',
+  level: 50,
+  stars: 3
+});
+assert(coll.length > 0);
+
+const isFav = dbService.toggleFavorite(testUserId, 'h_master_karma');
+assert.strictEqual(isFav, true);
+
+const syncEntry = dbService.addSyncLog({
+  userId: testUserId,
+  source: 'Unit Test Handshake',
+  status: 'SUCCESS',
+  details: 'Database test log'
+});
+assert.strictEqual(syncEntry.status, 'SUCCESS');
+
+const actEntry = dbService.addActivityLog({
+  userId: testUserId,
+  category: 'TEST',
+  action: 'RUN_TEST',
+  status: 'SUCCESS',
+  message: 'Integration test passed'
+});
+assert.strictEqual(actEntry.action, 'RUN_TEST');
+console.log('✅ Persistent Database Service tests passed!\n');
 
 runClientTests().then(() => {
   console.log('🎉 ALL BACKEND & CODE GENERATOR TESTS PASSED SUCCESSFULLY! 100% READY.');

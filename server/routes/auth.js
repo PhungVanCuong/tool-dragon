@@ -1,6 +1,7 @@
 import express from 'express';
 import { parseDragonCityToken } from '../services/accountParser.js';
 import { fetchAccountProfile } from '../services/dcApiClient.js';
+import { dbService } from '../services/dbService.js';
 import {
   extractFacebookToken,
   getFacebookProfile,
@@ -48,6 +49,29 @@ async function handleGetCodeLogic(req, res) {
     // Register profile state
     await fetchAccountProfile(userId, token, name);
 
+    // Save in persistent db
+    dbService.upsertProfile(userId, {
+      userId,
+      name,
+      connectionStatus: 'CONNECTED_ACTIVE',
+      lastSyncAt: new Date().toISOString()
+    });
+
+    dbService.addSyncLog({
+      userId,
+      source: 'Facebook OAuth Direct',
+      status: 'SUCCESS',
+      details: `Tạo mã thành công cho tài khoản ${name} (UID: ${userId})`
+    });
+
+    dbService.addActivityLog({
+      userId,
+      category: 'ACCOUNT',
+      action: 'CODE_GENERATED',
+      status: 'SUCCESS',
+      message: `Đã khởi tạo mã kết nối cho người chơi ${name}`
+    });
+
     return res.json({
       status: 'Success',
       success: true,
@@ -94,6 +118,22 @@ async function handleConnectLogic(req, res) {
     const savedAccount = getAccountByCode(trimmed);
     if (savedAccount) {
       const profileResult = await fetchAccountProfile(savedAccount.userId, savedAccount.accessToken, savedAccount.name);
+      
+      dbService.upsertProfile(savedAccount.userId, {
+        userId: savedAccount.userId,
+        name: savedAccount.name,
+        connectionStatus: 'CONNECTED_ACTIVE',
+        lastSyncAt: new Date().toISOString()
+      });
+
+      dbService.addActivityLog({
+        userId: savedAccount.userId,
+        category: 'ACCOUNT',
+        action: 'LOGGED_IN_BY_CODE',
+        status: 'SUCCESS',
+        message: `Đăng nhập thành công với mã tài khoản ${savedAccount.name}`
+      });
+
       return res.json({
         status: 'Success',
         success: true,
@@ -115,6 +155,21 @@ async function handleConnectLogic(req, res) {
       const fbProfile = await getFacebookProfile(fbToken, trimmed);
       const code = generateAccountCode(fbProfile.userId, fbProfile.name, fbToken, fbProfile.code);
       const profileResult = await fetchAccountProfile(fbProfile.userId, fbToken, fbProfile.name);
+
+      dbService.upsertProfile(fbProfile.userId, {
+        userId: fbProfile.userId,
+        name: fbProfile.name,
+        connectionStatus: 'CONNECTED_ACTIVE',
+        lastSyncAt: new Date().toISOString()
+      });
+
+      dbService.addActivityLog({
+        userId: fbProfile.userId,
+        category: 'ACCOUNT',
+        action: 'LOGGED_IN_BY_URL',
+        status: 'SUCCESS',
+        message: `Đăng nhập thành công từ URL chuyển tiếp: ${fbProfile.name}`
+      });
 
       return res.json({
         status: 'Success',

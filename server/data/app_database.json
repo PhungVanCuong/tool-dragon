@@ -1,0 +1,53 @@
+{
+  "profiles": {
+    "3560321594852606595": {
+      "name": "Cuong Phung",
+      "level": 68,
+      "gold": 48500000,
+      "food": 12400000,
+      "gems": 320,
+      "userId": "3560321594852606595",
+      "updatedAt": "2026-11-14T10:31:00.893Z"
+    }
+  },
+  "collections": {
+    "3560321594852606595": [
+      {
+        "dragonId": "h_master_karma",
+        "name": "High Master Karma Dragon",
+        "level": 50,
+        "stars": 3,
+        "addedAt": "2026-11-14T10:31:00.895Z",
+        "isFavorite": true
+      }
+    ]
+  },
+  "syncLogs": [
+    {
+      "id": "sync_1794652260898_s3c6",
+      "timestamp": "2026-11-14T10:31:00.898Z",
+      "userId": "3560321594852606595",
+      "source": "Unit Test Handshake",
+      "status": "SUCCESS",
+      "details": "Database test log"
+    }
+  ],
+  "activityLogs": [
+    {
+      "id": "act_1794652260899_io4y",
+      "timestamp": "2026-11-14T10:31:00.899Z",
+      "userId": "3560321594852606595",
+      "category": "TEST",
+      "action": "RUN_TEST",
+      "status": "SUCCESS",
+      "message": "Integration test passed"
+    }
+  ],
+  "settings": {
+    "theme": "dark",
+    "autoSync": false,
+    "syncIntervalMinutes": 30,
+    "notificationsEnabled": true,
+    "launcherPreference": "auto"
+  }
+}
